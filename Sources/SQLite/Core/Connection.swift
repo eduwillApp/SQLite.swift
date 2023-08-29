@@ -134,6 +134,13 @@ public final class Connection {
         sqlite3_close(handle)
     }
 
+     public func close() {
+        if _handle != nil {            
+            sqlite3_close(handle)
+            _handle = nil
+        }
+    }
+
     // MARK: -
 
     /// Whether or not the database was opened in a read-only state.
